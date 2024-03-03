@@ -5,12 +5,18 @@ import java.text.DecimalFormat;
 public class Calculator {
     public static double operationNumber(String expression) {
 
-        double num1,num2;
-        double result = 0;
-        String[] parts = expression.split(" ");
-        num1 = Double.parseDouble(parts[0]);
-        String ch = parts[1];
-        num2 = Double.parseDouble(parts[2]);
+        double num1=0,num2=0,result=0;
+        String ch="";
+        try {
+            String[] parts = expression.split(" ");
+            num1 = Double.parseDouble(parts[0]);
+            ch = parts[1];
+            num2 = Double.parseDouble(parts[2]);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Ошибка в выражении, значения введены не через пробел. "+ e);
+        }
         // Форматирование вывода результата
         DecimalFormat df = new DecimalFormat("0.0000");
         if(ch.equals("+")) {
