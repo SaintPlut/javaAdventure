@@ -1,4 +1,4 @@
-package org.calculated;
+package org.example.calculated;
 
 import java.text.DecimalFormat;
 
